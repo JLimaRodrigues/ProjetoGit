@@ -40,13 +40,13 @@
 
         <div class="acoes">
             <a>
-                <button>&lt;</button>
+                <button id="retornar" onclick="retornar()">&lt;</button>
             </a>
-            <input type="radio" name="opcao" value="1" onchange="trocar_menu()">
+            <input type="radio" name="opcao" value="1" onchange="trocar_menu()" checked>
             <input type="radio" name="opcao" value="2" onchange="trocar_menu()">
             <input type="radio" name="opcao" value="3" onchange="trocar_menu()">
             <a>
-                <button>&gt;</button>
+                <button id="avancar" onclick="avancar()">&gt;</button>
             </a>
         </div>
     </div>
