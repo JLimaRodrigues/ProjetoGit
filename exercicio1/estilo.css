@@ -36,3 +36,22 @@ a {
 a:hover {
     background-color: darkblue;
 }
+
+#apresentacao_imagens {
+    background-color: #181614d5;
+    text-align: center;
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.imagens {
+    width: 200px;
+    height: 200px;
+}
+
+.imagens:hover {
+    width: 220px;
+    height: 220px;
+    border-radius: 3px;
+}
