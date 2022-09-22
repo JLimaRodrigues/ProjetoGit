@@ -28,27 +28,61 @@ function trocar_menu(){
 function avancar(){
     //ATRIBUO O ID A VARIÁVEL
     var botao = document.getElementById('avancar')
+
     //CHAMO UMA FUNCAO ATRAVÉS DO EVENTO ONCLICK
     botao.onclick = movimentacao()
 }
 
 function movimentacao(){
     //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
-    var valor = parseInt(document.querySelector('input[name="opcao"]:checked').value);
+    var valor = document.querySelector('input[name="opcao"]:checked').value;
+    //console.log(valor)
 
-    if(valor <= 3){
-        //console.log(valor + 1);
-        valor += 1
-        document.querySelector('input[name="opcao"]:checked').value = valor
-        console.log(valor)
-    } else {
-        console.log('erro')
-    }
+    //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
+    var radios = document.getElementsByName("opcao");
+
+    //console.log(radios[0].value)
+    //console.log(radios[1].value)
+    //console.log(radios[2].value)
+    
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].value == valor) {
+            i += 1;
+            console.log(radios[i].value)
+            radios[i].checked = true;
+            break;
+        } else {
+            console.log('erro');
+        }
+}
+
+valor = "";
+radios = "";
 }
 
 function retornar(){
-    //ATRIBUO O ID A VARIÁVEL
-    var botao = document.getElementById('retornar')
-    //CHAMO UMA FUNCAO ATRAVÉS DO EVENTO ONCLICK
-    botao.onclick = console.log('retornar')
+        //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
+        var valor = document.querySelector('input[name="opcao"]:checked').value;
+        //console.log(valor)
+    
+        //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
+        var radios = document.getElementsByName("opcao");
+    
+        //console.log(radios[0].value)
+        //console.log(radios[1].value)
+        //console.log(radios[2].value)
+        
+        for (var i = 0; i < radios.length; i++) {
+            if ((radios[i].value == valor) && (radios[i].value > 0)) {
+                i -= 1;
+                console.log(radios[i].value)
+                radios[i].checked = true;
+                break;
+            } else {
+                //console.log('erro');
+            }
+    }
+    
+    valor = "";
+    radios = "";
 }
