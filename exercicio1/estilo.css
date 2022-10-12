@@ -71,6 +71,12 @@ li a:hover {
     width: 60%;
     padding: 10px;
     margin-top: 10px;
+    margin-left: 5em;
+}
+
+#grafico {
+    margin: 1em;
+    margin-top: 3em;
 }
 
 .imagens {
