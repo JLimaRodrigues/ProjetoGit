@@ -1,3 +1,9 @@
+window.onload = init()
+
+function init(){
+    return ocultar_tudo();
+}
+
 function trocar_menu(){
     //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
     var valor = document.querySelector('input[name="opcao"]:checked').value;
@@ -85,4 +91,46 @@ function retornar(){
     
     valor = "";
     radios = "";
+}
+
+function mostrar_status(id){
+    var usuario = id;
+    var primeiro = document.getElementById('primeiro-ranking');
+    var segundo = document.getElementById('segundo-ranking');
+    var terceiro = document.getElementById('terceiro-ranking');
+
+        if(usuario == 1){
+            console.log('primeiro')
+            primeiro.style.display = 'block';
+            segundo.style.display = 'none';
+            terceiro.style.display = 'none';
+        } else if (usuario == 2){
+            console.log('segundo')
+            primeiro.style.display = 'none';
+            segundo.style.display = 'block';
+            terceiro.style.display = 'none';
+        } else if(usuario == 3){
+            console.log('terceiro')
+            primeiro.style.display = 'none';
+            segundo.style.display = 'none';
+            terceiro.style.display = 'block';
+        } else {
+            console.log('erro')
+        }
+}
+
+function ocultar_tudo(){
+    var primeiro = document.getElementById('primeiro-ranking');
+    var segundo = document.getElementById('segundo-ranking');
+    var terceiro = document.getElementById('terceiro-ranking');
+
+    array = [];
+
+    primeiro != null ? array.push(primeiro) : ''
+    segundo != null ? array.push(segundo) : ''
+    terceiro != null ? array.push(terceiro) : ''
+
+    for(i=0;i<array.length;i++){
+        array[i].style.display = 'none';
+    }
 }

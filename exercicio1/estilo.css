@@ -1,21 +1,49 @@
 @import url(https://fonts.googleapis.com/css2?family=Passion+One&display=swap); 
 
-* {
-    margin: 0 auto;
+body {
+    height: 100vh;
+    margin:0;
+
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "main aside"
+    "footer footer";
+    grid-template-rows: 5.5em 1fr 4em;
+    grid-template-columns: 80% 20%;
+}
+
+header {
+    grid-area: header;
+    border: 1px solid green;
+}
+
+main {
+    grid-area: main;
+    border: 1px solid red;
+}
+
+aside {
+    grid-area: aside;
+    border: 1px solid orange;
+}
+
+footer{
+    grid-area: footer;
+    border: 1px solid blue;
+    justify-content: center;
 }
 
 nav {
     background-color: blue;
-    padding: 20px;
-    width: 50%;
     font-family: 'Passion One';
     text-align: center;
+    padding-bottom: 0.5em;
 }
 
 nav span {
     font-size: 25px; 
-    display: block; 
-    margin: 10px;
+    display: block;
 }
 
 ul {
@@ -26,14 +54,14 @@ li {
     display: inline;
 }
 
-a {
+li a {
     text-decoration: none;
     border-radius: 3px;
     padding: 10px;
     color: white;
 }
 
-a:hover {
+li a:hover {
     background-color: darkblue;
 }
 
@@ -54,4 +82,8 @@ a:hover {
     width: 220px;
     height: 220px;
     border-radius: 3px;
+}
+
+.link-footer {
+    display: inline;
 }
