@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Imagens</title>
-    <!--Meu CSS-->
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <span>Jogos</span>
-            <ul>
-                <li><a href="index.html">Menu</a></li>
-                <li><a href="imagens.html">Imagens</a></li>
-                <li><a href="ranking.html">Ranking</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
+<main>
         <div id="apresentacao_imagens">
             <h1>Imagens</h1>
     
@@ -59,29 +38,3 @@
             Aqui onde vão ficar os Jogos
         </div>
     </main>
-    <aside>
-        gráficos
-    </aside>
-    <footer style="justify-content: space-between;">
-        <quote>
-            Feito por <cite>Jefferson Lima</cite>, Setembro de 2022.
-        </quote>
-
-        <div style="text-align: right;">
-            <div class="link-footer">
-                
-                <a href="https://www.linkedin.com/in/jefferson-lima-rodrigues-400926245/">
-                    <img src="imagens/icone_linkedin.png" alt="icon_gmail" style="width: 30pt; height: 30pt">
-                </a>
-            </div>
-            <div class="link-footer">
-                <a href="mailto:jeffersonlima147516@gmail.com">
-                    <img src="imagens/icone_gmail.png" alt="icon_gmail" style="width: 30pt; height: 30pt">
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="meuscript.js"></script>
-</body>
-</html>
