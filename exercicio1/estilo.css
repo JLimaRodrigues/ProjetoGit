@@ -34,7 +34,6 @@
     footer{
         grid-area: footer;
         border: 1px solid blue;
-        position: center;
     }
     
     nav {
@@ -78,8 +77,7 @@
     }
     
     #grafico {
-        margin: 1em;
-        margin-top: 3em;
+        display: none;
     }
     
     .imagens {
