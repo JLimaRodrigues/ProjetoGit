@@ -1,21 +1,34 @@
-<canvas id="meu_canvas"  width="300" height="300"></canvas>
+<main>
+    <div id="iniciar_Jogo">
+        <form method="POST" autocomplete="off">
+            <input list="usuarios" type="text" placeholder="Digite seu nickname" id="nickname">
+            <button type="submit">Jogar</button>
+        </form>
+    </div>
 
-<script>
-    var canvas = document.getElementById('meu_canvas');
-    var context = canvas.getContext('2d')
+    <!--<datalist id="usuarios">
+        <?= $resultado;?>
+    </datalist>-->
 
-    function desenhaQuadrado(x,y,30,30)
-    /*var imagem = new Image();
-    imagem.src = 'imagens/jogo/explosao.png';
+    <canvas id="meu_canvas"  width="300" height="300"></canvas>
 
-        // Carregar a imagem
-        imagem.onload = function() {
-        context.drawImage(
-        imagem,
-        80, 10, 60, 65, // Área de recorte (clipping)
-        20, 20, 60, 65 // Desenho no Canvas
-        );
-        }
-        */
+    <script>
+        var canvas = document.getElementById('meu_canvas');
+        var context = canvas.getContext('2d')
 
-</script>
+        function desenhaQuadrado(x,y,30,30)
+        /*var imagem = new Image();
+        imagem.src = 'imagens/jogo/explosao.png';
+
+            // Carregar a imagem
+            imagem.onload = function() {
+            context.drawImage(
+            imagem,
+            80, 10, 60, 65, // Área de recorte (clipping)
+            20, 20, 60, 65 // Desenho no Canvas
+            );
+            }
+            */
+
+    </script>
+</main>
