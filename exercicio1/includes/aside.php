@@ -1,3 +1,17 @@
+<?php 
+
+$dados = [
+    ['tempo'=>'20:38:10','jogo'=>'Mata-Mosquito','data'=>'12/10/2022'],
+    ['tempo'=>'10:20:40','jogo'=>'Cobrinha','data'=>'09-10-2022'],
+    ['tempo'=>'20:38:10','jogo'=>'Tiro ao Alvo','data'=>'15-09-2022']
+];
+
+
+$array = ['primeiro-ranking', 'segundo-ranking', 'terceiro-ranking'];
+$canvas = ['primeiro-do-ranking', 'segundo-do-ranking','terceiro-do-ranking']
+
+?>
+
 <aside style="align-items: center;text-align: center;">
         <h1>Gráficos Individuais</h1>
 
@@ -26,32 +40,18 @@
             </table>
         <div>
 
-        <div id="primeiro-ranking" class="card">
-            <h2>Dados do Jogador</h2>
-            <p class="dados-jogador">Tempo Jogado: 20:38:10</p>
-            <p class="dados-jogador">Jogo preferido: Mata Mosquito</p>
-            <p class="dados-jogador">Última atividade: Hoje</p>
-            <canvas id="primeiro-do-ranking"></canvas>
+        <?php 
+        for($i = 0; $i < count($array); $i++){
+            echo '<div id="'.$array[$i].'" class="card">
+                <h2>Dados do Jogador</h2>
+                    <p class="dados-jogador">Tempo Jogado: '.$dados[$i]['tempo'].'</p>
+                    <p class="dados-jogador">Jogo preferido: '.$dados[$i]['jogo'].'</p>
+                    <p class="dados-jogador">Última atividade: '.$dados[$i]['data'].'</p>
+            <canvas id="'.$canvas[$i].'"></canvas>
             <button class="botao-ocultar" type="button" onclick="ocultar_tudo()">Ocultar</button>
-        </div>
-
-        <div id="segundo-ranking" class="card">
-            <h2>Dados do Jogador</h2>
-            <p class="dados-jogador">Tempo Jogado: 10:20:40</p>
-            <p class="dados-jogador">Jogo preferido: Tiro ao Alvo</p>
-            <p class="dados-jogador">Última atividade: Ontem</p>
-            <canvas id="segundo-do-ranking"></canvas>
-            <button class="botao-ocultar" type="button" onclick="ocultar_tudo()">Ocultar</button>
-        </div>
-
-        <div id="terceiro-ranking" class="card">
-            <h2>Dados do Jogador</h2>
-            <p class="dados-jogador">Tempo Jogado: 5:00:32</p>
-            <p class="dados-jogador">Jogo preferido: Cobrinha</p>
-            <p class="dados-jogador">Última atividade: Quase um mês</p>
-            <canvas id="terceiro-do-ranking"></canvas>
-            <button class="botao-ocultar" type="button" onclick="ocultar_tudo()">Ocultar</button>
-        </div>
+          </div>';
+        };
+        ?>
 
 
     </aside>
