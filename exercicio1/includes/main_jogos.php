@@ -4,7 +4,8 @@
     var canvas = document.getElementById('meu_canvas');
     var context = canvas.getContext('2d')
 
-    var imagem = new Image();
+    function desenhaQuadrado(x,y,30,30)
+    /*var imagem = new Image();
     imagem.src = 'imagens/jogo/explosao.png';
 
         // Carregar a imagem
@@ -15,5 +16,6 @@
         20, 20, 60, 65 // Desenho no Canvas
         );
         }
+        */
 
 </script>
