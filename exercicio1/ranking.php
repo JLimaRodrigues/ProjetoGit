@@ -1,22 +1,31 @@
 <?php 
+use \App\Model\Conexao;
+
 require __DIR__.'/vendor/autoload.php';
 
-/*
-//$query = 'SELECT uj.id, uj.nickname, uj.pontos, uj.jogo_fav, pl.nome, pl.id  FROM usuario_jogo uj INNER JOIN jogo pl ON pl.id = uj.id';
 
-$consulta = ;
+ $resultado='';
+try {
+    $conexao = new PDO('mysql:host=localhost;dbname=teste;',Conexao::USER,Conexao::PASS);
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$resultado = '';
-for($i = 0; $i < count($consulta);$i++){
-    $resultado .= '<tr>
-                        <td>'.$consulta[$i]->id.'</td>
-                        <td>'.$consulta[$i]->nickname.'</td>
-                        <td>'.($consulta[$i]->pontos == null ? '0': $consulta[$i]->pontos).'</td>
-                        <td>'.$consulta[$i]->tempo.'</td>
-                        <td>'.$consulta[$i]->nome.'</td>
-                </tr>';
+    $stmt = $conexao->prepare('SELECT uj.id, uj.nickname, uj.pontos, uj.jogo_fav, uj.tempo, pl.nome, pl.id  FROM usuario_jogo uj INNER JOIN jogo pl ON pl.id = uj.id');
+    $stmt->execute();
+
+    while($row = $stmt->fetch()) {
+        $resultado .= '<tr>
+                                <td>'.$row['id'].'</td>
+                                <td>'.$row['nickname'].'</td>
+                                <td>'.($row['pontos'] == null ? '0': $row['pontos']).'</td>
+                                <td>'.$row['tempo'].'</td>
+                                <td>'.$row['nome'].'</td>
+                        </tr>';
+    }
+} catch(PDOException $e) {
+    echo 'ERROR: ' . $e->getMessage();
 }
-*/
+
+
 define('TITLE', 'Ranking');
 
 include 'includes/header.php';
