@@ -1,14 +1,10 @@
 <main>
     <div id="iniciar_Jogo">
-        <form method="POST" autocomplete="off">
+        <form autocomplete="off">
             <input list="usuarios" type="text" placeholder="Digite seu nickname" id="nickname">
             <button type="submit">Jogar</button>
         </form>
     </div>
-
-    <!--<datalist id="usuarios">
-        <?= $resultado;?>
-    </datalist>-->
 
     <canvas id="meu_canvas"  width="300" height="300"></canvas>
 

@@ -17,12 +17,24 @@ class Usuario {
          * @var string
          */
         public $nickname;
+
+        /**
+         * Pontos do usuário
+         * @var integer
+         */
+        public $pontos;
     
         /**
          * Tempo ativo do usuário
          * @var string
          */
         public $tempo;
+
+        /**
+         * Jogo Favorito do usuário
+         * @var string
+         */
+        public $jogo_fav;
     
     
         /**
@@ -35,7 +47,9 @@ class Usuario {
     
             $this->id = $objDatabase->insert([
                 'nickname'         => $this->nickname,
-                'tempo'            => $this->tempo
+                'pontos'            => $this->pontos,
+                'tempo'            => $this->tempo,
+                'jogo_fav'         => $this->jogo_fav
             ]);
     
             //RETORNAR SUCESSO 
@@ -49,7 +63,9 @@ class Usuario {
         public function atualizar(){
             return (new Conexao ('usuario_jogo'))->update('id = '.$this->id ,[
                                                                                 'nickname'         => $this->nickname,
-                                                                                'tempo'            => $this->tempo
+                                                                                'pontos'            => $this->pontos,
+                                                                                'tempo'            => $this->tempo,
+                                                                                'jogo_fav'         => $this->jogo_fav
                                                                             ]);
         }
     
