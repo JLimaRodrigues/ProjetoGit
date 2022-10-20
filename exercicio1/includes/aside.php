@@ -1,10 +1,30 @@
 <?php 
 
-$dados = [
-    ['tempo'=>'20:38:10','jogo'=>'Mata-Mosquito','data'=>'12/10/2022'],
-    ['tempo'=>'10:20:40','jogo'=>'Cobrinha','data'=>'09-10-2022'],
-    ['tempo'=>'20:38:10','jogo'=>'Tiro ao Alvo','data'=>'15-09-2022']
-];
+use \App\Model\Conexao;
+
+
+ $resultado='';
+try {
+    $conexao = new PDO('mysql:host=localhost;dbname=site_jogos;',Conexao::USER,Conexao::PASS);
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $conexao->prepare('SELECT * FROM usuario');
+    $stmt->execute();
+
+    while($row = $stmt->fetch()) {
+        $dados[] = [
+            'id'=>$row['id_usuario'], 
+            'nickname'=>$row['nickname'],
+            'pontos'=>$row['pontos'],
+            'data'=>$row['ultima_atualizacao'],
+            'jogo'=>$row['jogo_favorito'],
+            'tempo'=>'05:38:10'
+        ];
+    }
+} catch(PDOException $e) {
+    echo 'ERROR: ' . $e->getMessage();
+}
+
 
 
 $array = ['primeiro-ranking', 'segundo-ranking', 'terceiro-ranking'];
@@ -51,6 +71,8 @@ $canvas = ['primeiro-do-ranking', 'segundo-do-ranking','terceiro-do-ranking']
             <button class="botao-ocultar" type="button" onclick="ocultar_tudo()">Ocultar</button>
           </div>';
         };
+
+        //echo '<pre>';print_r($dados);echo'</pre>';
         ?>
 
 

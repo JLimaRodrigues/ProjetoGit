@@ -17,7 +17,7 @@ class Conexao {
      * Nome do banco de dados
      * @var string
      */
-    const DBNAME = 'teste';
+    const DBNAME = 'site_jogos';
 
     /**
      * Nome de usuário do banco de dados

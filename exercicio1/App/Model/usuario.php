@@ -10,7 +10,7 @@ class Usuario {
          * Identificador único do usuario
          * @var integer
          */
-        public $id;
+        public $id_usuario;
     
         /**
          * Nickname do Usuário
@@ -28,13 +28,13 @@ class Usuario {
          * Tempo ativo do usuário
          * @var string
          */
-        public $tempo;
+        public $jogo_favorito;
 
         /**
-         * Jogo Favorito do usuário
+         * Ultima atualização
          * @var string
          */
-        public $jogo_fav;
+        public $ultima_atualizacao;
     
     
         /**
@@ -43,13 +43,13 @@ class Usuario {
          */
         public function cadastrar(){
             //INSERIR O USUÁRIO NO BANCO
-            $objDatabase = new Conexao('usuario_jogo');
+            $objDatabase = new Conexao('usuario');
     
             $this->id = $objDatabase->insert([
-                'nickname'         => $this->nickname,
-                'pontos'            => $this->pontos,
-                'tempo'            => $this->tempo,
-                'jogo_fav'         => $this->jogo_fav
+                'nickname'             => $this->nickname,
+                'pontos'               => $this->pontos,
+                'jogo_favorito'        => $this->jogo_favorito,
+                'ultima_atualizacao'   => $this->ultima_atualizacao
             ]);
     
             //RETORNAR SUCESSO 
@@ -61,11 +61,11 @@ class Usuario {
          * @return boolean
          */
         public function atualizar(){
-            return (new Conexao ('usuario_jogo'))->update('id = '.$this->id ,[
-                                                                                'nickname'         => $this->nickname,
-                                                                                'pontos'            => $this->pontos,
-                                                                                'tempo'            => $this->tempo,
-                                                                                'jogo_fav'         => $this->jogo_fav
+            return (new Conexao ('usuario'))->update('id = '.$this->id ,[
+                                                                        'nickname'             => $this->nickname,
+                                                                        'pontos'               => $this->pontos,
+                                                                        'jogo_favorito'        => $this->jogo_favorito,
+                                                                        'ultima_atualizacao'   => $this->ultima_atualizacao
                                                                             ]);
         }
     
@@ -74,7 +74,7 @@ class Usuario {
          * @return boolean
          */
         public function excluir(){
-            return (new Conexao ('usuario_jogo'))->delete("id = ".$this->id);
+            return (new Conexao ('usuario'))->delete("id = ".$this->id);
         }
     
         /**
@@ -85,7 +85,7 @@ class Usuario {
          * @return Usuarios
          */
         public static function getUsuarios($where = null, $order= null, $limit = null){
-            return (new Conexao ('usuario_jogo'))->select($where,$order,$limit)
+            return (new Conexao ('usuario'))->select($where,$order,$limit)
                                                ->fetchAll(PDO::FETCH_CLASS,self::class);
         }
     
@@ -95,7 +95,7 @@ class Usuario {
          * @return Usuario
          */
         public static function getUsuario($id){
-            return (new Conexao ('usuario_jogo'))->select('id = '.$id)
+            return (new Conexao ('usuario'))->select('id = '.$id)
                                                ->fetchObject(self::class);
         }
     
