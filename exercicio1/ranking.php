@@ -26,6 +26,7 @@ try {
 }
 
 
+
 define('TITLE', 'Ranking');
 
 include 'includes/header.php';

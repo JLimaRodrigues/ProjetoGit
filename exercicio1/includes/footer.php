@@ -21,12 +21,33 @@
 
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <?php 
+    //GAMBIARRA TEMPORÁRIA
+    use \App\Model\Conexao;
+    
+
+    try {
+        $conexao = new PDO('mysql:host=localhost;dbname=site_jogos;',Conexao::USER,Conexao::PASS);
+        $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = $conexao->prepare("SELECT nome AS 'Jogos', COUNT(*) AS 'Num_usuarios' FROM estatisca_jogos GROUP BY nome ORDER BY COUNT(*) DESC");
+        $sql->execute();
+
+        while($row = $sql->fetch()) {
+            $dados2[] = [
+                'jogos'=>$row['Jogos'], 
+                'usuarios'=>$row['Num_usuarios']
+            ];
+        }
+    } catch(PDOException $e) {
+        echo 'ERROR: ' . $e->getMessage();
+    }
+    
+    ?>
     <script>
-        const labels = [
-                        'Mata Mosquito',
-                        'Tiro ao Alvo',
-                        'Cobrinha'
-                    ];
+        //CONSTANTE COM DADOS RETORNADOS DO BANCO SQL
+        const labels = [<?php for($i=0;$i<count($dados);$i++){if(($i + 1)<count($dados)){echo '"'.$dados2[$i]['jogos'].'",';}else{echo '"'.$dados2[$i]['jogos'].'"';}} ?>]
 
                     const data = {
                         labels: labels,
@@ -34,7 +55,7 @@
                         label: 'Usuários Jogaram',
                         backgroundColor: 'rgb(0, 253, 253)',
                         borderColor: 'rgb(255, 99, 132)',
-                        data: [1, 5, 2]
+                        data: [<?php for($i=0;$i<count($dados);$i++){if(($i + 1)<count($dados)){echo $dados2[$i]['usuarios'].',';}else{echo $dados2[$i]['usuarios'];}} ?>]//DADOS RETORNADOS DO BANCO DE DADOS REFERENCIADOS DE UMA VIEW
                         }]
                     };
 
