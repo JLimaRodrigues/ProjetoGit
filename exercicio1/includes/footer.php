@@ -47,7 +47,7 @@
     ?>
     <script>
         //CONSTANTE COM DADOS RETORNADOS DO BANCO SQL
-        const labels = [<?php for($i=0;$i<count($dados);$i++){if(($i + 1)<count($dados)){echo '"'.$dados2[$i]['jogos'].'",';}else{echo '"'.$dados2[$i]['jogos'].'"';}} ?>]
+        const labels = [<?php for($i=0;$i<count($dados2);$i++){if(($i + 1)<count($dados2)){echo '"'.$dados2[$i]['jogos'].'",';}else{echo '"'.$dados2[$i]['jogos'].'"';}} ?>]
 
                     const data = {
                         labels: labels,
@@ -55,7 +55,7 @@
                         label: 'Usuários Jogaram',
                         backgroundColor: 'rgb(0, 253, 253)',
                         borderColor: 'rgb(255, 99, 132)',
-                        data: [<?php for($i=0;$i<count($dados);$i++){if(($i + 1)<count($dados)){echo $dados2[$i]['usuarios'].',';}else{echo $dados2[$i]['usuarios'];}} ?>]//DADOS RETORNADOS DO BANCO DE DADOS REFERENCIADOS DE UMA VIEW
+                        data: [<?php for($i=0;$i<count($dados2);$i++){if(($i + 1)<count($dados2)){echo $dados2[$i]['usuarios'].',';}else{echo $dados2[$i]['usuarios'];}} ?>]//DADOS RETORNADOS DO BANCO DE DADOS REFERENCIADOS DE UMA VIEW
                         }]
                     };
 
