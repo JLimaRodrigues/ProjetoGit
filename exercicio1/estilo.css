@@ -677,7 +677,11 @@
     }
 
     .popup-flutuante {
+        padding: 2.5em;
         margin: 10px;
+        background-color:rgba(10, 7, 7, 0.801);
+        border: 3px solid rgb(41, 175, 41);
+        border-radius: 10px;
     }
 
 }

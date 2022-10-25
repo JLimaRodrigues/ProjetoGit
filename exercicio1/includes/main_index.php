@@ -3,7 +3,7 @@
             <h1>Feed</h1>
     
             <div class="popup-flutuante">
-            <form>
+            <form id="novo_post">
                 <fieldset>
                     <legend>Novo Post</legend>
 
@@ -23,7 +23,7 @@
                         </div>
                     
                     <div>
-                        <button type="submit">Enviar</button>
+                        <button id="enviar" type="submit" onclick="enviarDados()">Enviar</button>
                     </div>
                     
                     </div>

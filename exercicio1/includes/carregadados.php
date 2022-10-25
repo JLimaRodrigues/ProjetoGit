@@ -1,11 +1,31 @@
 <?php 
-$conexao = new PDO('mysql:host=localhost;dbname=site_jogos;',Conexao::USER,Conexao::PASS);
-$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if(isset($_POST) && !empty($_POST)){
 
-$stmt = $conexao->prepare('SELECT * FROM usuario');
-$stmt->execute();
+    $descricao = $_POST['descricao'];
+    $arquivo = $_POST['arquivo'];
 
-$sql = $conexao->prepare(SELECT COUNT(*) AS "Cobrinha" FROM estatisca_jogos WHERE nome = 'Cobrinha');
-$sql->execute();
+    $data = [$descricao, $arquivo];
+
+    $dados = json_encode($data);
+
+    echo '<pre>';print_r($dados);echo '</pre>';
+    //$json_output = json_decode($jsonReceivedata);
+    //return $dados; 
+}
+
+
+if(isset($_GET) && !empty($_GET)){
+
+    $descricao = $_GET['descricao'];
+    $arquivo = $_GET['arquivo'];
+
+    $data = [$descricao, $arquivo];
+
+    $dados = json_encode($data);
+
+    echo '<pre>';print_r($dados);echo '</pre>';
+    //$json_output = json_decode($jsonReceivedata);
+    //return $dados; 
+}
 
 ?>

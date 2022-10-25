@@ -19,7 +19,7 @@
     </footer>
 
 
-    
+    <!--CHART JS-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <?php 
@@ -182,6 +182,28 @@
                             );
 </script>
 
+<!-- MEU JS-->
 <script src="meuscript.js"></script>
+
+<!--AXIOS-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+function enviarDados(){
+    var descricao =  document.getElementById('descricao').value
+    var arquivo = document.getElementById('arquivo').value
+
+    axios.get(`carregadados.php`,{descricao, arquivo})
+                        .then(response => {
+                            console.log(response)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+};
+
+
+</script>
+
 </body>
 </html>
