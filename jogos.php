@@ -6,7 +6,7 @@ use \App\Model\Usuario;
 //OBJeTO
 $consulta = Usuario::getUsuarios();
 
-//VALIDAÇÃO DO POST
+//VALIDAÇÃO DO POSTl
 if(isset($_POST['nickname'])){
     $objUsuario->nickname  = $_POST['nickname'];
 
