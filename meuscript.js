@@ -4,15 +4,18 @@ function init(){
     return ocultar_tudo();
 }
 
+
+//FUNÇÃO RESPONSÁVEL POR ATUALIZAR O MENU DEPENDENDO DE QUAL RADIO ESTIVER CHECKED
 function trocar_menu(){
     //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
     var valor = document.querySelector('input[name="opcao"]:checked').value;
-
+    
     //ATRIBUO OS ID A VARIÁVEIS
     opcao1 = document.getElementById('opcao1')
     opcao2 = document.getElementById('opcao2')
     opcao3 = document.getElementById('opcao3')
 
+    
     //TESTO UM DE CADA VEZ PRA APRESENTAR O VISÍVEL
     if(valor == 1){
         opcao1.style.display = 'block'
@@ -27,72 +30,62 @@ function trocar_menu(){
         opcao2.style.display = 'none'
         opcao3.style.display = 'block'
     } else {
-        document.write('Erro')
+        console.log('Erro')
     }
 }
 
+//FUNÇÃO RESPONSÁVEL POR AVANÇAR OS MENUS DE APRESENTAÇÃO DE FORMA DINÂMICA
 function avancar(){
-    //ATRIBUO O ID A VARIÁVEL
-    var botao = document.getElementById('avancar')
+   //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
+   var valor = document.querySelector('input[name="opcao"]:checked').value;
 
-    //CHAMO UMA FUNCAO ATRAVÉS DO EVENTO ONCLICK
-    botao.onclick = movimentacao()
+   //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
+   var radios = document.getElementsByName("opcao");
+   
+   for (i = 0; i <= radios.length; i++) {
+    if(valor >= radios.length){
+        i = 0
+        radios[i].checked = true
+        break
+    } else if ((radios[i].value == valor) && (radios[i].value > 0)) {
+           i += 1;
+           radios[i].checked = true;
+           break;
+       
+    }
 }
 
-function movimentacao(){
-    //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
-    var valor = document.querySelector('input[name="opcao"]:checked').value;
-    //console.log(valor)
-
-    //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
-    var radios = document.getElementsByName("opcao");
-
-    //console.log(radios[0].value)
-    //console.log(radios[1].value)
-    //console.log(radios[2].value)
-    
-    for (var i = 0; i < radios.length; i++) {
-        if (radios[i].value == valor) {
-            i += 1;
-            console.log(radios[i].value)
-            radios[i].checked = true;
-            break;
-        } else {
-            console.log('erro');
-        }
-}
-
+trocar_menu()
 valor = "";
 radios = "";
 }
 
+//FUNÇÃO RESPONSÁVEL POR RETORNAR OS MENUS DE APRESENTAÇÃO
 function retornar(){
         //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
         var valor = document.querySelector('input[name="opcao"]:checked').value;
-        //console.log(valor)
     
         //PASSA O VALOR DO RADIO PRA UMA VARIÁVEL
         var radios = document.getElementsByName("opcao");
-    
-        //console.log(radios[0].value)
-        //console.log(radios[1].value)
-        //console.log(radios[2].value)
         
         for (var i = 0; i < radios.length; i++) {
-            if ((radios[i].value == valor) && (radios[i].value > 0)) {
+            if((radios[i].value - 1) == 0){
+                i = radios.length - 1
+                radios[i].checked = true
+                i = 0
+            } else if ((radios[i].value == valor) && (radios[i].value > 0)) {
                 i -= 1;
-                console.log(radios[i].value)
                 radios[i].checked = true;
                 break;
-            } else {
-                //console.log('erro');
             }
     }
     
+    trocar_menu()
     valor = "";
     radios = "";
 }
 
+//FUNÇÃO RESPONSÁVEL POR MOSTRAR OS STATUS NO RANKING
 function mostrar_status(id){
     var usuario = id;
     var primeiro = document.getElementById('primeiro-ranking');
@@ -119,6 +112,7 @@ function mostrar_status(id){
         }
 }
 
+//OCULTA TODAS AS INFORMAÇÕES DO RANKING
 function ocultar_tudo(){
     var primeiro = document.getElementById('primeiro-ranking');
     var segundo = document.getElementById('segundo-ranking');

@@ -185,6 +185,9 @@
 <!-- MEU JS-->
 <script src="meuscript.js"></script>
 
+<!-- CONTROLE CANVAS-->
+<script src="controle-canvas.js"></script>
+
 <!--AXIOS-->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>

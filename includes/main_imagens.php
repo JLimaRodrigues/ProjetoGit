@@ -35,6 +35,6 @@
         </div>
 
         <div>
-            Aqui onde vão ficar os Jogos
+            <canvas id="controle" width="1200" height="800"></canvas>
         </div>
     </main>
