@@ -1,26 +1,26 @@
 <main>
         <div id="apresentacao_imagens">
-            <h1>Imagens</h1>
+            <div id="fundo">
+                <p id="opcao1">
+                    <img class="imagens" src="imagens/among.png" alt="amog us" title="among us">
+                    <img class="imagens" src="imagens/jogo_carro.png" alt="jogo de carro" title="jogo de carro">
+                    <img class="imagens" src="imagens/subway.png" alt="subway" title="subway surfers">
+                </p>
+        
+                <p id="opcao2" style="display: none;">
+                    <img class="imagens" src="imagens/subway.png" alt="amog us" title="among us">
+                    <img class="imagens" src="imagens/among.png" alt="jogo de carro" title="jogo de carro">
+                    <img class="imagens" src="imagens/jogo_carro.png" alt="subway" title="subway surfers">
+                </p>
+        
+                <p id="opcao3" style="display: none;">
+                    <img class="imagens" src="imagens/jogo_carro.png" alt="amog us" title="among us">
+                    <img class="imagens" src="imagens/among.png" alt="jogo de carro" title="jogo de carro">
+                    <img class="imagens" src="imagens/subway.png" alt="subway" title="subway surfers">
+                </p>
+            </div>
     
-            <p id="opcao1">
-                <img class="imagens" src="imagens/among.png" alt="amog us" title="among us">
-                <img class="imagens" src="imagens/jogo_carro.png" alt="jogo de carro" title="jogo de carro">
-                <img class="imagens" src="imagens/subway.png" alt="subway" title="subway surfers">
-            </p>
-    
-            <p id="opcao2" style="display: none;">
-                <img class="imagens" src="imagens/subway.png" alt="amog us" title="among us">
-                <img class="imagens" src="imagens/among.png" alt="jogo de carro" title="jogo de carro">
-                <img class="imagens" src="imagens/jogo_carro.png" alt="subway" title="subway surfers">
-            </p>
-    
-            <p id="opcao3" style="display: none;">
-                <img class="imagens" src="imagens/jogo_carro.png" alt="amog us" title="among us">
-                <img class="imagens" src="imagens/among.png" alt="jogo de carro" title="jogo de carro">
-                <img class="imagens" src="imagens/subway.png" alt="subway" title="subway surfers">
-            </p>
-    
-    
+
             <div class="acoes">
                 <a>
                     <button id="retornar" onclick="retornar()">&lt;</button>
@@ -31,6 +31,16 @@
                 <a>
                     <button id="avancar" onclick="avancar()">&gt;</button>
                 </a>
+            </div>
+
+            <div id="controles">
+                <div class="esquerdo">
+
+                </div>
+
+                <div class="direito">
+                    
+                </div>
             </div>
         </div>
 

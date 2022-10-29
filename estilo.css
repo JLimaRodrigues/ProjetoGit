@@ -198,7 +198,7 @@
     }
     
     #apresentacao_imagens {
-        background-color: #181614d5;
+        background-color: #2f27a1;
         text-align: center;
         width: 60%;
         padding: 10px;
@@ -591,12 +591,19 @@
     }
     
     #apresentacao_imagens {
-        background-color: #181614d5;
+        background-color: #2f27a1;
+        border-radius: 3em;
         text-align: center;
-        width: 60%;
-        padding: 10px;
+        width: 70%;
+        height: 30em;
+        padding: 0.5em 3em;
         margin-top: 10px;
         margin-left: 5em;
+    }
+
+    #fundo {
+        background-color: #0a0a0a;
+        border-radius: 3em; 
     }
     
     #grafico {
