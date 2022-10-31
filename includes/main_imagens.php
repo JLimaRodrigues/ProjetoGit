@@ -34,12 +34,17 @@
             </div>
 
             <div id="controles">
-                <div class="esquerdo">
-
+                <!--LADO ESQUERDO-->
+                <div id="lado-esquerdo" class="fundo-botoes">
+                    <div><button id="botao-top"></button></div>
                 </div>
 
-                <div class="direito">
-                    
+                <!--LADO DIREITO-->
+                <div id="lado-esquerdo" class="fundo-botoes">
+                    <button  id="botao-confirmar" class="botoes-jogo"></button>
+                    <button  id="botao-voltar" class="botoes-jogo"></button>
+                    <button  id="botao-chute" class="botoes-jogo"></button>
+                    <button  id="botao-soco" class="botoes-jogo"></button>
                 </div>
             </div>
         </div>

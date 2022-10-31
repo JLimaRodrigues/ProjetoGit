@@ -1,4 +1,13 @@
-<main>
+<main style="display: flex">
+    <nav>
+        <ul id="lista-jogos">
+            <li><a href="">Aventura</a></li>
+            <li><a href="">Tiro</a></li>
+            <li><a href="">Ação</a></li>
+            <li><a href="">Plataforma</a></li>
+        </ul>
+    </nav>
+
     <div id="iniciar_Jogo">
         <form autocomplete="off">
             <input list="usuarios" type="text" placeholder="Digite seu nickname" id="nickname">
